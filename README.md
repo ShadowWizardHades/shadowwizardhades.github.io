@@ -1,2 +1,24 @@
-# shadowwizardhades.github.io
-This should be my personal portfolio although the project has not been touched for a longer period. In the future, the website will be refreshed.
+# README
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
