@@ -7,4 +7,39 @@
  * depending on specificity.
  *
  * Consider organizing styles into separate files for maintainability.
+ *= require_tree .
+ *= require_self
+ *= require application.bootstrap
  */
+
+ body {
+  background-color: #212529;  /* Black background for the whole page */
+  color: white;             /* White text color */
+  height: 100vh;            /* Full height of the viewport */
+  display: flex;            /* Use flexbox to center content */
+  justify-content: center;  /* Center horizontally */
+  align-items: center;      /* Center vertically */
+  margin: 0;                /* Remove default margin */
+}
+
+.card-header .nav-underline .rails {
+  color: #dc3545;
+}
+
+.card-header .nav-underline .vue {
+  color: #198754;
+}
+
+.card-header .nav-underline .java {
+  color: #fd7e14;
+}
+
+a {
+  text-decoration: none;
+}
+
+@media screen and (min-width: 770px) {
+  .card-custom-setting{
+    width: 670px;
+  }
+}

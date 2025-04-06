@@ -1,1 +1,54 @@
-%h1 this works with haml
+.d-flex.justify-content-center.flex-column
+  .card.bg-dark.border-white.text-white.p-3.m-3.card-custom-setting
+    .row.g-0
+      .col-md-5.text-center
+        %img.img-fluid.rounded-start{:alt => "Hubert as a drawing", :src => asset_path('hubert_pic_quadratic_smaller.jpeg')}/
+      .col-md-7
+        .card-body.bg-dark.text-white
+          %h5.card-title.text-center Hello, I am Hubert
+          %ul.list-group.list-group-flush.text-center
+            %li.list-group-item.list-group-flush.bg-dark.border-white.text-white Junior Fullstack Developer 
+            %li.list-group-item.list-group-flush.bg-dark.border-white.text-white Based in Zurich, Switzerland
+            %li.list-group-item.list-group-flush.bg-dark.border-white.text-white Has knowledge in Java, Javascript and Vue.js
+            %li.list-group-item.list-group-flush.bg-dark.border-white.text-white Have a year of working experience
+
+  .card.bg-dark.border-white.text-white.p-3.m-3.card-custom-setting
+    .card-header
+      %ul.nav.nav-underline.justify-content-center
+        %li.nav-item
+          = link_to '#rails', class: 'nav-link rails active', 'data-bs-toggle': 'pill', 'data-bs-target': '#rails' do
+            Ruby on Rails
+        %li.nav-item
+          = link_to '#vue', class: 'nav-link vue', 'data-bs-toggle': 'pill', 'data-bs-target': '#vue' do
+            Vue
+        %li.nav-item
+          = link_to '#java', class: 'nav-link java', 'data-bs-toggle': 'pill', 'data-bs-target': '#java' do
+            Java
+
+    .card-body
+      .tab-content.text-center
+        .tab-pane.fade.show.active{id: 'rails'}
+          = render partial: 'skill_rails'
+        .tab-pane.fade{id: 'vue'}
+          = render partial: 'skill_vue'
+        .tab-pane.fade{id: 'java'}
+          = render partial: 'skill_java'
+
+  .card.bg-dark.border-white.text-white.p-3.m-3.card-custom-setting
+    .card-body
+      %h5.card-title.text-center Contact & Socials
+      %ul.list-group.list-group-flush.text-center
+        %ul.list-group.list-group-flush.text-center
+          %li.list-group-item.list-group-flush.bg-dark.border-white.text-white hubert.korona@gmail.com
+          %li.list-group-item.list-group-flush.bg-dark.border-white.gap-3
+            = link_to 'https://www.linkedin.com/in/hubert-korona-0a78aa1a6', target: '_blank', rel: 'noopener' do
+              %i.bi.bi-linkedin.fs-2.text-light.hover-icon{ 
+                data: { bs_toggle: 'tooltip' }, 
+                title: 'Click to go to my linkedin'
+              }
+            
+            = link_to 'https://github.com/ShadowWizardHades', target: '_blank', rel: 'noopener' do
+              %i.bi.bi-github.fs-2.text-light.hover-icon{ 
+                data: { bs_toggle: 'tooltip' }, 
+                title: 'Click to go to my github'
+              }            
