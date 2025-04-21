@@ -19,7 +19,7 @@ gem "jbuilder"
 # Gem for making clearer and simple views in rails
 gem "haml"
 # Gem for bootstrap
-gem 'bootstrap', '~> 5.0.0'
+gem 'bootstrap', '~> 5.3.5'
 # Gem for bootstrap forms
 gem 'bootstrap_form'
 
