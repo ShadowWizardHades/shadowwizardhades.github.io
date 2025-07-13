@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Generating...</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Arial', sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .container {
+            text-align: center;
+            color: white;
+            z-index: 10;
+        }
+        
+        .main-text {
+            font-size: 4rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            margin-bottom: 2rem;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        .sub-text {
+            font-size: 1.5rem;
+            opacity: 0.8;
+            font-weight: 200;
+            letter-spacing: 1px;
+        }
+        
+        .dots {
+            display: inline-block;
+            animation: loading 1.5s infinite;
+        }
+        
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .shape {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .shape:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .shape:nth-child(2) {
+            width: 120px;
+            height: 120px;
+            left: 80%;
+            animation-delay: 2s;
+        }
+        
+        .shape:nth-child(3) {
+            width: 60px;
+            height: 60px;
+            left: 70%;
+            animation-delay: 4s;
+        }
+        
+        .shape:nth-child(4) {
+            width: 100px;
+            height: 100px;
+            left: 20%;
+            animation-delay: 1s;
+        }
+        
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            }
+            to {
+                text-shadow: 0 0 30px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.6);
+            }
+        }
+        
+        @keyframes loading {
+            0%, 20% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-100px) rotate(180deg);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .main-text {
+                font-size: 2.5rem;
+                letter-spacing: 2px;
+            }
+            
+            .sub-text {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    
+    <div class="container">
+        <h1 class="main-text">PORTFOLIO IS BEING CREATED</h1>
+        <p class="sub-text">The creator of this page realised a bit late, that his portfolio written in rails can not be deployed through github actions... lessons learned. This page will either be my portfolio at some point or something else I think of, stay tuned :) now please wait while magic happens<span class="dots">...</span></p>
+    </div>
+    
+    <script>
+        const dots = document.querySelector('.dots');
+        let dotCount = 0;
+        
+        setInterval(() => {
+            dotCount = (dotCount + 1) % 4;
+            dots.textContent = '.'.repeat(dotCount);
+        }, 500);
+
+        const shapesContainer = document.querySelector('.floating-shapes');
+        
+        function createRandomShape() {
+            const shape = document.createElement('div');
+            shape.className = 'shape';
+            shape.style.width = Math.random() * 100 + 40 + 'px';
+            shape.style.height = shape.style.width;
+            shape.style.left = Math.random() * 100 + '%';
+            shape.style.animationDelay = Math.random() * 6 + 's';
+            shape.style.animationDuration = (Math.random() * 4 + 4) + 's';
+            
+            shapesContainer.appendChild(shape);
+
+            setTimeout(() => {
+                shape.remove();
+            }, 10000);
+        }
+        
+        setInterval(createRandomShape, 3000);
+    </script>
+</body>
+</html>
